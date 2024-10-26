@@ -4,11 +4,10 @@ import '../styles/Carousel.css';
 
 const Carousel = ({ books }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleItemsCount = 5; // cantidad de libros visibles en el carrusel
 
   const showNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === books.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % books.length);
   };
 
   const showPrevious = () => {
@@ -17,7 +16,10 @@ const Carousel = ({ books }) => {
     );
   };
 
-  const visibleBooks = books.slice(currentIndex, currentIndex + 5);
+  // Selección de libros para que el carrusel continúe al llegar al final
+  const visibleBooks = Array.from({ length: visibleItemsCount }, (_, i) =>
+    books[(currentIndex + i) % books.length]
+  );
 
   return (
     <div className="carousel">
