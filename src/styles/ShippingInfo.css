@@ -1,0 +1,80 @@
+.shipping-info-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .shipping-info-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .shipping-info-content {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .shipping-form {
+    flex: 2;
+  }
+  
+  .shipping-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .shipping-form label {
+    margin-top: 1rem;
+    color: #333;
+  }
+  
+  .shipping-form input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .continue-btn {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    background-color: #623C6B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .continue-btn:hover {
+    background-color: #532c58;
+  }
+  
+  .order-summary {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .order-summary h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #623C6B;
+  }
+  
+  .order-summary p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #623C6B;
+  }
+  

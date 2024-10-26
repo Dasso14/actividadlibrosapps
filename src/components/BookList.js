@@ -1,22 +1,30 @@
 // src/components/BookList.js
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { BookContext } from '../contexts/BookContext';
 import '../styles/BookList.css';
 
-const BookList = () => {
-  const { books } = useContext(BookContext);
+const BookList = ({ toggleCart }) => {  // Recibe toggleCart como prop
+  const { books, addBookToCart } = useContext(BookContext);
+
+  const handleSelectProduct = (book) => {
+    addBookToCart(book); // Agrega el producto al carrito
+    toggleCart();        // Abre el carrito
+  };
 
   return (
     <div className="book-list">
       <h2>Lista de Libros</h2>
-      {books.map((book) => (
-        <div key={book.id} className="book-item">
-          <h3>{book.title}</h3>
-          <p>${book.price}</p>
-          <Link to={`/books/${book.id}`}>Ver Detalles</Link>
-        </div>
-      ))}
+      <div className="book-grid">
+        {books.map((book) => (
+          <div key={book.id} className="book-item">
+            <h3>{book.title}</h3>
+            <p>${book.price.toFixed(2)}</p>
+            <button onClick={() => handleSelectProduct(book)} className="select-button">
+              Seleccionar Producto
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

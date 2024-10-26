@@ -1,65 +1,117 @@
 /* src/styles/Checkout.css */
 
-.checkout {
-    max-width: 600px;
+.checkout-container {
+    max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
+  }
+  
+  .checkout-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .checkout-content {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* Columna de artículos del carrito */
+  .cart-items {
+    flex: 2;
+  }
+  
+  .cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cart-items th,
+  .cart-items td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .item-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .item-details img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+  }
+  
+  .subtotal {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  /* Columna de resumen del pedido */
+  .order-summary {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
   }
   
-  .checkout h2 {
-    font-size: 1.5rem;
+  .order-summary h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
     color: #623C6B;
-    margin-bottom: 1rem;
   }
   
-  .checkout form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .checkout form label {
-    margin-top: 1rem;
+  .order-summary p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
     color: #333;
   }
   
-  .checkout form input,
-  .checkout form select {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .checkout p {
+  .total {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #623C6B;
     margin-top: 1rem;
+    color: #623C6B;
   }
   
-  .checkout button {
-    margin-top: 1rem;
+  .checkout-btn {
+    display: block;
+    width: 100%;
     padding: 0.7rem;
     background-color: #623C6B;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 1rem;
+    text-align: center;
   }
   
-  .checkout button:hover {
+  .checkout-btn:hover {
     background-color: #532c58;
   }
   
-  .back-btn {
+  .cancel-btn {
+    display: block;
+    width: 100%;
+    padding: 0.7rem;
     background-color: #ccc;
     color: #333;
-    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    text-align: center;
   }
   
-  .back-btn:hover {
+  .cancel-btn:hover {
     background-color: #aaa;
   }
   

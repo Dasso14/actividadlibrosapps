@@ -1,5 +1,3 @@
-/* src/styles/CartDrawer.css */
-
 .cart-drawer {
     position: fixed;
     top: 0;
@@ -20,7 +18,6 @@
     right: 0;
   }
   
-  /* Barra de navegación específica del carrito */
   .cart-nav {
     display: flex;
     justify-content: space-between;
