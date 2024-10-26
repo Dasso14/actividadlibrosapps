@@ -1,0 +1,33 @@
+/* src/styles/BookList.css */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+  }
+  
+  .book-item {
+    padding: 1rem;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .book-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .book-item h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #623C6B;
+  }
+  
+  .book-item p {
+    color: #333;
+  }
+  

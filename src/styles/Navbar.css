@@ -1,0 +1,32 @@
+/* src/styles/Navbar.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #623C6B;
+    color: #fff;
+  }
+  
+  nav h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  nav input[type="text"] {
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 200px;
+  }
+  
+  nav div {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav div span {
+    margin-left: 1rem;
+  }
+  

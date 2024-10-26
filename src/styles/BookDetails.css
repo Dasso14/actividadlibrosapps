@@ -1,0 +1,37 @@
+/* src/styles/BookDetails.css */
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .book-details h2 {
+    font-size: 1.8rem;
+    color: #623C6B;
+  }
+  
+  .book-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .book-details button {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    background-color: #623C6B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .book-details button:hover {
+    background-color: #532c58;
+  }
+  
