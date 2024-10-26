@@ -1,21 +1,71 @@
+:root {
+  --primary-color: #E77C3B; 
+  --secondary-color: #C2593A;
+  --accent-color: #8B3A3A; 
+  --light-color: #FFF3E4;
+  --text-color: #5D3A3A;
+  --button-hover: #BA4A3E;
+}
+
+.register-background {
+  background-image: url('https://cafedespacio.org/wp-content/uploads/2011/02/fondo-de-libros.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .register-container input,
-  .register-container button {
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.register-container h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.register-container input {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.register-container input::placeholder {
+  color: var(--text-color);
+}
+
+.register-container button {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: var(--button-hover);
+}

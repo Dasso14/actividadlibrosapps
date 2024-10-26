@@ -1,40 +1,22 @@
-.login-container {
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
+.login-background {
+  background-image: url('https://cafedespacio.org/wp-content/uploads/2011/02/fondo-de-libros.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 3rem auto;
-  padding: 2rem;
-  width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.login-container h2 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.login-container input {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.login-container button {
-  margin-top: 1rem;
-  padding: 0.7rem;
-  width: 100%;
-  background-color: #623C6B;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-container button:hover {
-  background-color: #532c58;
+  justify-content: center;
 }
 
 .login-container {
@@ -42,18 +24,64 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.login-container input,
-.login-container button {
-  width: 100%;
+.login-container h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.login-container input {
   margin: 0.5rem 0;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.login-container input::placeholder {
+  color: var(--text-color);
+}
+
+.login-container button {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: var(--button-hover);
+}
+
+.login-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.login-container a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-container a:hover {
+  color: var(--button-hover);
 }

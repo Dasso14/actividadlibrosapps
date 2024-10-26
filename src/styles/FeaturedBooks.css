@@ -1,16 +1,26 @@
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
 .featured-books {
   padding: 2rem;
-  background-color: #f4f4f4;
-  border-radius: 8px;
+  background-color: var(--light-color);
+  border-radius: 12px;
   margin: 2rem auto;
   max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .featured-books h2 {
-  font-size: 2rem;
-  color: #623C6B;
+  font-size: 2.5rem;
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
-  text-align: center;
 }
 
 .book-grid {
@@ -23,41 +33,41 @@
 .book-item {
   padding: 1rem;
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .book-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .book-item h3 {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: var(--text-color);
   margin: 0.5rem 0;
 }
 
 .book-item p {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-color);
   margin: 0.5rem 0;
 }
 
 .select-button {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #623C6B;
+  background-color: var(--primary-color);
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .select-button:hover {
-  background-color: #532c58;
+  background-color: var(--button-hover);
 }
-

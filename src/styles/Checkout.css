@@ -1,113 +1,127 @@
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
 .checkout-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .checkout-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .checkout-content {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .cart-items {
-    flex: 2;
-  }
-  
-  .cart-items table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .cart-items th,
-  .cart-items td {
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .item-details {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .item-details img {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
-  }
-  
-  .subtotal {
-    text-align: right;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
-  
-  .order-summary {
-    flex: 1;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .order-summary h3 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    color: #623C6B;
-  }
-  
-  .order-summary p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .total {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    color: #623C6B;
-  }
-  
-  .checkout-btn {
-    display: block;
-    width: 100%;
-    padding: 0.7rem;
-    background-color: #623C6B;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-    text-align: center;
-  }
-  
-  .checkout-btn:hover {
-    background-color: #532c58;
-  }
-  
-  .cancel-btn {
-    display: block;
-    width: 100%;
-    padding: 0.7rem;
-    background-color: #ccc;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    text-align: center;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #aaa;
-  }
-  
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.checkout-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.cart-items {
+  flex: 2;
+}
+
+.cart-items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-items th,
+.cart-items td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--accent-color);
+  text-align: left;
+  color: var(--text-color);
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-details img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.subtotal {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: var(--primary-color);
+}
+
+.order-summary {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.order-summary p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+.checkout-btn,
+.cancel-btn {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.checkout-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.checkout-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+}
+
+.cancel-btn:hover {
+  background-color: #aaa;
+}

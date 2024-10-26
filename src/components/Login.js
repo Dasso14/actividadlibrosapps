@@ -17,22 +17,24 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <input 
-        type="text" 
-        placeholder="Usuario" 
-        value={user} 
-        onChange={(e) => setUser(e.target.value)} 
-      />
-      <input 
-        type="password" 
-        placeholder="Contraseña" 
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
-      />
-      <button onClick={handleLogin}>Iniciar sesión</button>
-      <p>¿No tienes una cuenta? <Link to="/register">Regístrate aquí</Link></p>
+    <div className="login-background">
+      <div className="login-container">
+        <h2>Login</h2>
+        <input
+          type="text"
+          placeholder="Usuario"
+          value={user}
+          onChange={(e) => setUser(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleLogin}>Iniciar sesión</button>
+        <p>¿No tienes una cuenta? <Link to="/register">Regístrate aquí</Link></p>
+      </div>
     </div>
   );
 };

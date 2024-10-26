@@ -1,10 +1,20 @@
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #623C6B;
+  background-color: var(--primary-color);
   color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-left, .navbar-center, .navbar-right {
@@ -23,28 +33,47 @@
 
 .navbar-logo h1 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color); 
+  font-weight: bold;
+}
+
+.navbar-logo a {
   text-decoration: none;
+  color: inherit;
 }
 
 .navbar-search {
   width: 100%;
   max-width: 400px;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 0.6rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  background-color: #fff;
+}
+
+.navbar-search::placeholder {
+  color: var(--text-color);
 }
 
 .cart-button, .orders-button, .user-icon {
   padding: 0.5rem 1rem;
   background-color: #fff;
-  color: #623C6B;
+  color: var(--primary-color);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
   margin-left: 0.5rem;
+}
+
+.cart-button:hover, .orders-button:hover, .user-icon:hover {
+  background-color: var(--button-hover);
+  color: #fff;
 }
 
 .user-menu {
@@ -54,28 +83,35 @@
 .user-icon {
   border: none;
   padding: 8px;
-  border-radius: 5px;
-  background-color: white;
+  border-radius: 8px;
+  background-color: #fff;
   cursor: pointer;
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 40px;
+  top: 45px;
   right: 0;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 150px;
+  z-index: 10;
 }
 
-
 .logout-button {
-  background-color: #623C6B;
+  background-color: var(--accent-color);
   color: #fff;
   border: none;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--button-hover);
 }

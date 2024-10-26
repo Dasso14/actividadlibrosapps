@@ -1,126 +1,130 @@
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
 .payment-method-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .payment-method-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .payment-method-content {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .payment-form {
-    flex: 2;
-  }
-  
-  .payment-form p {
-    margin: 0.5rem 0;
-    color: #333;
-  }
-  
-  .payment-inputs {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .payment-inputs input {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    flex: 1;
-  }
-  
-  .billing-address {
-    margin-top: 1rem;
-  }
-  
-  .billing-address div {
-    margin-top: 0.5rem;
-  }
-  
-  .billing-address-input {
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-  }
-  
-  .place-order-btn {
-    margin-top: 1.5rem;
-    padding: 0.7rem;
-    background-color: #623C6B;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .place-order-btn:hover {
-    background-color: #532c58;
-  }
-  
-  .order-summary {
-    flex: 1;
-    padding: 1.5rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .order-summary h3 {
-    margin-top: 0;
-    font-size: 1.4rem;
-    color: #623C6B;
-  }
-  
-  .order-summary p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .total {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    color: #623C6B;
-  }
-  
-  .order-complete-message {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem 2rem;
-    background-color: #4caf50;
-    color: #fff;
-    border-radius: 8px;
-    font-size: 1.5rem;
-    text-align: center;
-    z-index: 1000;
-  }
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--light-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method-container h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.payment-method-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.payment-form {
+  flex: 2;
+}
+
+.payment-form p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.payment-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.payment-inputs input {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+.billing-address {
+  margin-top: 1rem;
+}
+
+.billing-address div {
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}
+
+.billing-address-input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  width: 100%;
+  color: var(--text-color);
+}
+
+.place-order-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.place-order-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.order-summary {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.order-summary p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-top: 1rem;
+}
 
 .order-complete-message {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1rem 2rem;
-  background-color: #4caf50;
+  padding: 1.5rem 2rem;
+  background-color: var(--primary-color);
   color: #fff;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1.5rem;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
-
-  

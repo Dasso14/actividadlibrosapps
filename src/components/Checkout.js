@@ -1,4 +1,3 @@
-// src/components/Checkout.js
 import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { useNavigate } from 'react-router-dom';
@@ -55,7 +54,7 @@ const Checkout = () => {
           <p>Imp. Est.: ${tax.toFixed(2)}</p>
           <p className="total">Total: ${total.toFixed(2)}</p>
           <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
-          <button className="cancel-btn" onClick={() => navigate('/')}>Cancelar</button> {/* Asegura redirección a inicio */}
+          <button className="cancel-btn" onClick={() => navigate('/')}>Cancelar</button> 
         </div>
       </div>
     </div>
