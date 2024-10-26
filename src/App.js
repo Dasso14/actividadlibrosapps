@@ -34,7 +34,6 @@ function AppContent({ books, searchTerm, toggleCart, isLoggedIn, logout, setSear
       <CartDrawer isOpen={isCartOpen} toggleCart={toggleCart} />
 
       <Routes>
-        {/* Página de inicio con carrusel y libros destacados */}
         <Route
           path="/"
           element={

@@ -1,3 +1,4 @@
+// src/components/Navbar.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
@@ -46,7 +47,7 @@ const Navbar = ({ setSearchTerm, toggleCart, isLoggedIn, logout }) => {
 
         {isLoggedIn && (
           <div className="user-menu">
-            <button className="user-icon" onClick={toggleDropdown} style={{ backgroundColor: "white" }}>
+            <button className="user-icon" onClick={toggleDropdown} style={{ backgroundColor: 'white' }}>
               👤
             </button>
             {isDropdownOpen && (

@@ -1,14 +1,18 @@
 import React, { createContext, useState } from 'react';
+import BinaryTree from '../data/BinaryTree'; 
 
 export const BookContext = createContext();
 
 const BookProvider = ({ children }) => {
-  const [books] = useState([
+  const [cart, setCart] = useState([]);
+  const bookTree = new BinaryTree();
+
+  const initialBooks = [
     { id: 1, title: 'El Principito', price: 20, description: 'Un clásico de la literatura.' },
     { id: 2, title: '1984', price: 25, description: 'Una distopía intrigante.' },
-  ]);
+  ];
 
-  const [cart, setCart] = useState([]);
+  initialBooks.forEach((book) => bookTree.insert(book));
 
   const addBookToCart = (book) => {
     const existingBook = cart.find((item) => item.id === book.id);
@@ -36,8 +40,25 @@ const BookProvider = ({ children }) => {
     }
   };
 
+  const findBookByTitle = (title) => {
+    return bookTree.find(title);
+  };
+
+  const deleteBookByTitle = (title) => {
+    bookTree.delete(title);
+  };
+
   return (
-    <BookContext.Provider value={{ books, cart, addBookToCart, removeBookFromCart }}>
+    <BookContext.Provider
+      value={{
+        books: initialBooks, 
+        cart,
+        addBookToCart,
+        removeBookFromCart,
+        findBookByTitle, 
+        deleteBookByTitle, 
+      }}
+    >
       {children}
     </BookContext.Provider>
   );

@@ -10,7 +10,7 @@ const Login = ({ onLogin }) => {
   const handleLogin = () => {
     if (user && password) {
       onLogin();
-      navigate('/books');
+      navigate('/');
     } else {
       alert('Por favor ingresa el usuario y la contraseña');
     }
