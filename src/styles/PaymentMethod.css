@@ -1,0 +1,116 @@
+/* src/styles/PaymentMethod.css */
+
+.payment-method-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .payment-method-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .payment-method-content {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  /* Columna de formulario de pago */
+  .payment-form {
+    flex: 2;
+  }
+  
+  .payment-form p {
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  
+  .payment-inputs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .payment-inputs input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+  }
+  
+  .billing-address {
+    margin-top: 1rem;
+  }
+  
+  .billing-address div {
+    margin-top: 0.5rem;
+  }
+  
+  .billing-address-input {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .place-order-btn {
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+    background-color: #623C6B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .place-order-btn:hover {
+    background-color: #532c58;
+  }
+  
+  /* Columna de resumen del pedido */
+  .order-summary {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .order-summary h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #623C6B;
+  }
+  
+  .order-summary p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #623C6B;
+  }
+  
+  /* Mensaje de orden completada */
+  .order-complete-message {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 1000;
+  }
+  

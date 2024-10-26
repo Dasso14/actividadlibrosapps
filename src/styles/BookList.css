@@ -1,33 +1,55 @@
 /* src/styles/BookList.css */
+
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     padding: 2rem;
-    justify-content: center;
+    text-align: center;
+  }
+  
+  .book-list h2 {
+    font-size: 2rem;
+    color: #623C6B;
+    margin-bottom: 1.5rem;
+  }
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
   
   .book-item {
     padding: 1rem;
-    width: 200px;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .book-item:hover {
-    transform: scale(1.05);
   }
   
   .book-item h3 {
-    margin: 0.5rem 0;
     font-size: 1.2rem;
-    color: #623C6B;
+    color: #333;
+    margin: 0.5rem 0;
   }
   
   .book-item p {
-    color: #333;
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  .select-button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #623C6B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .select-button:hover {
+    background-color: #532c58;
   }
   
