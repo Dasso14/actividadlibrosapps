@@ -1,4 +1,3 @@
-// src/contexts/BookContext.js
 import React, { createContext, useState } from 'react';
 
 export const BookContext = createContext();
@@ -7,7 +6,6 @@ const BookProvider = ({ children }) => {
   const [books] = useState([
     { id: 1, title: 'El Principito', price: 20, description: 'Un clásico de la literatura.' },
     { id: 2, title: '1984', price: 25, description: 'Una distopía intrigante.' },
-    // Añade más libros según sea necesario
   ]);
 
   const [cart, setCart] = useState([]);

@@ -1,5 +1,3 @@
-/* src/styles/ShippingMethod.css */
-
 .shipping-method-container {
     max-width: 900px;
     margin: 0 auto;
@@ -17,7 +15,6 @@
     gap: 2rem;
   }
   
-  /* Columna de opciones de envío */
   .shipping-options {
     flex: 2;
   }
@@ -50,7 +47,6 @@
     background-color: #532c58;
   }
   
-  /* Columna de resumen del pedido */
   .order-summary {
     flex: 1;
     padding: 1.5rem;

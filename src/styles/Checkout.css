@@ -1,5 +1,3 @@
-/* src/styles/Checkout.css */
-
 .checkout-container {
     max-width: 900px;
     margin: 0 auto;
@@ -17,7 +15,6 @@
     gap: 2rem;
   }
   
-  /* Columna de artículos del carrito */
   .cart-items {
     flex: 2;
   }
@@ -53,7 +50,6 @@
     margin-top: 1rem;
   }
   
-  /* Columna de resumen del pedido */
   .order-summary {
     flex: 1;
     padding: 1.5rem;

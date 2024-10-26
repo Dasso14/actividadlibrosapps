@@ -1,4 +1,3 @@
-// src/data/BinaryTree.js
 class TreeNode {
     constructor(book) {
       this.book = book;
@@ -61,11 +60,9 @@ class TreeNode {
         node.right = this.removeNode(node.right, bookTitle);
         return node;
       } else {
-        // Node with only one child or no child
         if (node.left === null) return node.right;
         if (node.right === null) return node.left;
   
-        // Node with two children
         const minRight = this.findMinNode(node.right);
         node.book = minRight.book;
         node.right = this.removeNode(node.right, minRight.book.title);

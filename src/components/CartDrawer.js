@@ -1,4 +1,3 @@
-// src/components/CartDrawer.js
 import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +11,6 @@ const CartDrawer = ({ isOpen, toggleCart }) => {
 
   return (
     <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
-      {/* Barra de navegación del carrito */}
       <div className="cart-nav">
         <h2>Carrito</h2>
         <button className="close-btn" onClick={toggleCart}>X</button>

@@ -1,4 +1,3 @@
-// src/components/ShippingInfo.js
 import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +11,7 @@ const ShippingInfo = () => {
   const total = subtotal;
 
   const handleContinue = () => {
-    navigate('/shipping-method'); // Redirige a la pantalla de método de envío
+    navigate('/shipping-method'); 
   };
 
   return (

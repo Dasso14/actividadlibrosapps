@@ -43,7 +43,7 @@
   .cart-items {
     flex-grow: 1;
     overflow-y: auto;
-    max-height: calc(100vh - 150px); /* Ajuste para respetar el tamaño de la pantalla */
+    max-height: calc(100vh - 150px); 
     margin: 1rem;
     padding: 0;
     list-style: none;

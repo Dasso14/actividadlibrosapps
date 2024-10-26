@@ -1,21 +1,26 @@
-// src/components/FeaturedBooks.js
 import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import '../styles/FeaturedBooks.css';
 
-const FeaturedBooks = ({ toggleCart }) => { // Recibe toggleCart como prop
+const FeaturedBooks = ({ toggleCart, searchTerm = '' }) => {
   const { books, addBookToCart } = useContext(BookContext);
 
   const handleSelectProduct = (book) => {
-    addBookToCart(book); // Agrega el libro destacado al carrito
-    toggleCart();        // Abre el carrito
+    addBookToCart(book);
+    toggleCart();
   };
+
+  const normalizedSearchTerm = String(searchTerm).toLowerCase();
+
+  const filteredBooks = books
+    .filter((book) => book.title.toLowerCase().includes(normalizedSearchTerm))
+    .slice(0, 3); 
 
   return (
     <div className="featured-books">
-      <h2>Libros Destacados</h2>
+      <h2>Lista de Libros</h2>
       <div className="book-grid">
-        {books.slice(0, 3).map((book) => (
+        {filteredBooks.map((book) => (
           <div key={book.id} className="book-item">
             <h3>{book.title}</h3>
             <p>${book.price.toFixed(2)}</p>

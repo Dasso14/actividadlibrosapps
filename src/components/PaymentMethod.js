@@ -1,4 +1,3 @@
-// src/components/PaymentMethod.js
 import React, { useContext, useState } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { useNavigate } from 'react-router-dom';
@@ -11,22 +10,29 @@ const PaymentMethod = () => {
   const [orderCompleted, setOrderCompleted] = useState(false);
 
   const subtotal = cart.reduce((sum, book) => sum + book.price * book.quantity, 0);
-  const shipping = 5.99; // Ejemplo de costo de envío
-  const tax = subtotal * 0.1; // Impuesto del 10%
+  const shipping = 5.99; 
+  const tax = subtotal * 0.1; 
   const total = subtotal + shipping + tax;
 
   const handlePlaceOrder = () => {
     setOrderCompleted(true);
     setTimeout(() => {
-      navigate("/"); // Redirige al inicio después de mostrar el mensaje
-    }, 2000); // Espera 2 segundos antes de redirigir
+      navigate("/"); 
+    }, 2000); 
   };
+
+  if (orderCompleted) {
+    return (
+      <div className="order-complete-message">
+        <p>Orden completada exitosamente</p>
+      </div>
+    );
+  }
 
   return (
     <div className="payment-method-container">
       <h2>Método de Pago</h2>
       <div className="payment-method-content">
-        {/* Columna de información de pago */}
         <div className="payment-form">
           <p>Dirección de Envío: 123 Calle Principal, Ciudad</p>
           <p>Método de Envío: UPS Ground - $5.99</p>
@@ -74,7 +80,6 @@ const PaymentMethod = () => {
           </button>
         </div>
 
-        {/* Columna de resumen del pedido */}
         <div className="order-summary">
           <h3>Resumen</h3>
           <p>Subtotal: ${subtotal.toFixed(2)}</p>
@@ -83,13 +88,6 @@ const PaymentMethod = () => {
           <p className="total">Total: ${total.toFixed(2)}</p>
         </div>
       </div>
-
-      {/* Mensaje de confirmación de orden */}
-      {orderCompleted && (
-        <div className="order-complete-message">
-          <p>Orden completada exitosamente</p>
-        </div>
-      )}
     </div>
   );
 };
