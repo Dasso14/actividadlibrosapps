@@ -65,3 +65,10 @@
 .carousel-button:hover {
   color: var(--button-hover);
 }
+
+/* src/styles/Carousel.css */
+h2 {
+  text-align: center;
+  color: #623C6B;
+  margin-bottom: 1rem;
+}

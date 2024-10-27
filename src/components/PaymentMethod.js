@@ -1,3 +1,4 @@
+// src/components/PaymentMethod.js
 import React, { useContext, useState } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { useNavigate } from 'react-router-dom';
