@@ -1,33 +1,99 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Login from './components/Login';
+import Carousel from './components/Carousel';
+import FeaturedBooks from './components/FeaturedBooks';
 import BookList from './components/BookList';
 import BookDetails from './components/BookDetails';
-import Cart from './components/Cart';
+import CartDrawer from "./components/CartDrawer"
 import Checkout from './components/Checkout';
-import Carousel from './components/Carousel';
+import ShippingInfo from './components/ShippingInfo';
+import ShippingMethod from './components/ShippingMethod';
+import PaymentMethod from './components/PaymentMethod';
+import Orders from './components/Orders';
+import Login from './components/Login';
+import Register from './components/Register';
+
+function AppContent({ books, searchTerm, toggleCart, isLoggedIn, logout, setSearchTerm, isCartOpen, orders, handlePlaceOrder, login }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  return (
+    <>
+      {/* Navbar solo se muestra si no está en /login o /register */}
+      {location.pathname !== '/login' && location.pathname !== '/register' && (
+        <Navbar
+          setSearchTerm={setSearchTerm}
+          toggleCart={toggleCart}
+          isLoggedIn={isLoggedIn}
+          logout={logout}
+        />
+      )}
+      
+      <CartDrawer isOpen={isCartOpen} toggleCart={toggleCart} />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              {isHomePage && <Carousel books={books} />}
+              {isHomePage && <FeaturedBooks searchTerm={searchTerm} toggleCart={toggleCart} />}
+            </>
+          }
+        />
+        <Route path="/books" element={<BookList toggleCart={toggleCart} searchTerm={searchTerm} />}/>
+        <Route path="/orders" element={<Orders orders={orders} />} />
+        <Route path="/login" element={<Login onLogin={login} />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/checkout" element={<Checkout onPlaceOrder={handlePlaceOrder} />} />
+        <Route path="/shipping" element={<ShippingInfo />} />
+        <Route path="/shipping-method" element={<ShippingMethod />} />
+        <Route path="/payment-method" element={<PaymentMethod />} />
+        <Route path="/search" element={<BookList toggleCart={toggleCart} searchTerm={searchTerm} />} />
+        <Route path="/books/:id" element={<BookDetails />} />
+      </Routes>
+    </>
+  );
+}
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [orders, setOrders] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const books = [
-    { title: 'Libro 1', author: 'Autor 1' },
-    { title: 'Libro 2', author: 'Autor 2' },
-    { title: 'Libro 3', author: 'Autor 3' },
-    { title: 'Libro 4', author: 'Autor 4' },
-    { title: 'Libro 5', author: 'Autor 5' },
+    { id: 1, title: 'Libro 1', author: 'Autor 1', price: 20 },
+    { id: 2, title: 'Libro 2', author: 'Autor 2', price: 25 },
+    { id: 3, title: 'Libro 3', author: 'Autor 3', price: 30 },
+    { id: 4, title: 'Libro 4', author: 'Autor 4', price: 22 },
+    { id: 5, title: 'Libro 5', author: 'Autor 5', price: 28 },
   ];
+
+  const toggleCart = () => setIsCartOpen(!isCartOpen);
+  const handlePlaceOrder = (cartItems) => {
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    setOrders([...orders, { items: cartItems, total }]);
+  };
+  const login = () => setIsLoggedIn(true);
+  const logout = () => setIsLoggedIn(false);
+
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/books/:id" element={<BookDetails />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
-      <Carousel books={books} />
-      <BookList />
+      <AppContent
+        books={books}
+        searchTerm={searchTerm}
+        toggleCart={toggleCart}
+        isLoggedIn={isLoggedIn}
+        logout={logout}
+        setSearchTerm={setSearchTerm}
+        isCartOpen={isCartOpen}
+        orders={orders}
+        handlePlaceOrder={handlePlaceOrder}
+        login={login}
+      />
     </Router>
   );
 }

@@ -12,7 +12,7 @@ const ShippingInfo = () => {
   const total = subtotal;
 
   const handleContinue = () => {
-    navigate('/shipping-method'); // Redirige a la pantalla de método de envío
+    navigate('/shipping-method'); 
   };
 
   return (

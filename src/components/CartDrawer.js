@@ -12,7 +12,6 @@ const CartDrawer = ({ isOpen, toggleCart }) => {
 
   return (
     <div className={`cart-drawer ${isOpen ? 'open' : ''}`}>
-      {/* Barra de navegación del carrito */}
       <div className="cart-nav">
         <h2>Carrito</h2>
         <button className="close-btn" onClick={toggleCart}>X</button>

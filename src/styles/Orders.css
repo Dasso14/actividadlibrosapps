@@ -7,67 +7,67 @@
   --button-hover: #BA4A3E; /* Efecto hover */
 }
 
-.featured-books {
+.orders {
   padding: 2rem;
+  max-width: 700px;
+  margin: 2rem auto;
   background-color: var(--light-color);
   border-radius: 12px;
-  margin: 2rem auto;
-  max-width: 1000px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.featured-books h2 {
-  font-size: 2.5rem;
+.orders h2 {
+  font-size: 1.8rem;
   color: var(--primary-color);
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+.orders-list {
+  list-style: none;
+  padding: 0;
 }
 
-.book-item {
-  padding: 1rem;
+.order-item {
   background-color: #fff;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--accent-color);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.book-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.order-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.book-item h3 {
-  font-size: 1.3rem;
+.order-item h3 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.order-item p {
   color: var(--text-color);
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 
-.book-item p {
-  font-size: 1rem;
-  color: var(--text-color);
-  margin: 0.5rem 0;
-}
-
-.select-button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
+.back-button {
+  padding: 0.7rem 1.5rem;
   background-color: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  max-width: 200px;
+  margin: 2rem auto 0;
+  display: block;
   transition: background-color 0.3s ease;
 }
 
-.select-button:hover {
+.back-button:hover {
   background-color: var(--button-hover);
 }

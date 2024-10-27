@@ -1,44 +1,64 @@
-/* src/styles/Cart.css */
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
 .cart-container {
-    padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .cart-container h2 {
-    font-size: 1.5rem;
-    color: #623C6B;
-  }
-  
-  .cart-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .cart-item p {
-    color: #333;
-  }
-  
-  .cart-total {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #623C6B;
-  }
-  
-  .cart-container button {
-    margin-top: 1rem;
-    padding: 0.7rem;
-    background-color: #623C6B;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .cart-container button:hover {
-    background-color: #532c58;
-  }
-  
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: var(--light-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cart-container h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--text-color);
+}
+
+.cart-item p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.cart-total {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: right;
+}
+
+.cart-container button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.cart-container button:hover {
+  background-color: var(--button-hover);
+}

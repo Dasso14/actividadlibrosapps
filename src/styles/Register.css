@@ -1,13 +1,13 @@
 :root {
-  --primary-color: #E77C3B; /* Naranja cálido */
-  --secondary-color: #C2593A; /* Marrón rojizo */
-  --accent-color: #8B3A3A; /* Rojizo oscuro */
-  --light-color: #FFF3E4; /* Fondo cálido */
-  --text-color: #5D3A3A; /* Marrón oscuro para textos */
-  --button-hover: #BA4A3E; /* Efecto hover */
+  --primary-color: #E77C3B; 
+  --secondary-color: #C2593A;
+  --accent-color: #8B3A3A; 
+  --light-color: #FFF3E4;
+  --text-color: #5D3A3A;
+  --button-hover: #BA4A3E;
 }
 
-.login-background {
+.register-background {
   background-image: url('https://cafedespacio.org/wp-content/uploads/2011/02/fondo-de-libros.jpg'); 
   background-size: cover;
   background-position: center;
@@ -19,7 +19,7 @@
   justify-content: center;
 }
 
-.login-container {
+.register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,18 +27,18 @@
   width: 90%;
   max-width: 400px;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.9); 
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.login-container h2 {
-  margin-bottom: 1rem;
+.register-container h2 {
   font-size: 1.8rem;
   color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.login-container input {
+.register-container input {
   margin: 0.5rem 0;
   padding: 0.8rem;
   width: 100%;
@@ -49,11 +49,11 @@
   font-size: 1rem;
 }
 
-.login-container input::placeholder {
+.register-container input::placeholder {
   color: var(--text-color);
 }
 
-.login-container button {
+.register-container button {
   margin-top: 1rem;
   padding: 0.8rem;
   width: 100%;
@@ -66,22 +66,6 @@
   transition: background-color 0.3s ease;
 }
 
-.login-container button:hover {
+.register-container button:hover {
   background-color: var(--button-hover);
-}
-
-.login-container p {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-color);
-}
-
-.login-container a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login-container a:hover {
-  color: var(--button-hover);
 }

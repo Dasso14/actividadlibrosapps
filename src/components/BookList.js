@@ -3,27 +3,37 @@ import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import '../styles/BookList.css';
 
-const BookList = ({ toggleCart }) => {  // Recibe toggleCart como prop
-  const { books, addBookToCart } = useContext(BookContext);
+const BookList = ({ toggleCart, searchTerm }) => {
+  const { books, addBookToCart, selectedCategory } = useContext(BookContext);
+
+  const filteredBooks = books.filter(book =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (selectedCategory === '' || book.category === selectedCategory) // Filtra por categoría seleccionada
+  );
 
   const handleSelectProduct = (book) => {
-    addBookToCart(book); // Agrega el producto al carrito
-    toggleCart();        // Abre el carrito
+    addBookToCart(book); 
+    toggleCart();        
   };
 
   return (
     <div className="book-list">
-      <h2>Lista de Libros</h2>
+      <h2>Resultados de búsqueda</h2>
       <div className="book-grid">
-        {books.map((book) => (
-          <div key={book.id} className="book-item">
-            <h3>{book.title}</h3>
-            <p>${book.price.toFixed(2)}</p>
-            <button onClick={() => handleSelectProduct(book)} className="select-button">
-              Seleccionar Producto
-            </button>
-          </div>
-        ))}
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => (
+            <div key={book.id} className="book-item">
+              <h3>{book.title}</h3>
+              <p>{book.author}</p>
+              <p>${book.price.toFixed(2)}</p>
+              <button onClick={() => handleSelectProduct(book)} className="select-button">
+                Seleccionar Producto
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No se encontraron libros para "{searchTerm}" en la categoría "{selectedCategory}"</p>
+        )}
       </div>
     </div>
   );

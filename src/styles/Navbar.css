@@ -1,32 +1,220 @@
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  justify-content: center;
+}
+
+.navbar-right {
+  justify-content: flex-end;
+}
+
+.navbar-logo h1 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+  font-weight: bold;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-search:focus {
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+.navbar-search::placeholder {
+  color: var(--text-color);
+}
+
+.cart-button, .orders-button, .user-icon {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.cart-button:hover, .orders-button:hover, .user-icon:hover {
+  background-color: var(--button-hover);
+  color: #fff;
+}
+
+.user-menu {
+  position: relative;
+}
+
+.user-icon {
+  padding: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 150px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.user-menu:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logout-button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--button-hover);
+}
+
 /* src/styles/Navbar.css */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #623C6B;
-    color: #fff;
-  }
-  
-  nav h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-  
-  nav input[type="text"] {
-    padding: 0.5rem;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    outline: none;
-    width: 200px;
-  }
-  
-  nav div {
-    display: flex;
-    align-items: center;
-  }
-  
-  nav div span {
-    margin-left: 1rem;
-  }
-  
+.search-button {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Navbar.css */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search {
+  padding: 0.5rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px 0 0 8px; /* Redondeo solo en los bordes izquierdos */
+  outline: none;
+  width: 250px;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--button-hover);
+  color: #fff;
+  border: none;
+  border-radius: 0 8px 8px 0; /* Redondeo solo en los bordes derechos */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* src/styles/Navbar.css */
+
+.category-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}

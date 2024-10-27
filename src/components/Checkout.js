@@ -9,19 +9,18 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const subtotal = cart.reduce((sum, book) => sum + book.price * book.quantity, 0);
-  const shipping = 5.99;  // Ejemplo de costo de envío
-  const tax = subtotal * 0.1;  // Impuesto del 10%
+  const shipping = 5.99;
+  const tax = subtotal * 0.1;
   const total = subtotal + shipping + tax;
 
   const handleCheckout = () => {
-    navigate('/shipping'); // Redirige a la pantalla de información de envío
+    navigate('/shipping');
   };
 
   return (
     <div className="checkout-container">
       <h2>Tu Carrito</h2>
       <div className="checkout-content">
-        {/* Columna de artículos del carrito */}
         <div className="cart-items">
           <table>
             <thead>
@@ -49,7 +48,6 @@ const Checkout = () => {
           <p className="subtotal">Subtotal: ${subtotal.toFixed(2)}</p>
         </div>
 
-        {/* Columna de resumen de pedido */}
         <div className="order-summary">
           <h3>Resumen</h3>
           <p>Subtotal: ${subtotal.toFixed(2)}</p>
@@ -57,7 +55,7 @@ const Checkout = () => {
           <p>Imp. Est.: ${tax.toFixed(2)}</p>
           <p className="total">Total: ${total.toFixed(2)}</p>
           <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
-          <button className="cancel-btn" onClick={() => navigate('/books')}>Cancelar</button>
+          <button className="cancel-btn" onClick={() => navigate('/')}>Cancelar</button> 
         </div>
       </div>
     </div>

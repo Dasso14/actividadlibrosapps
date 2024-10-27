@@ -1,37 +1,50 @@
-/* src/styles/BookDetails.css */
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
+/* Estilos para la sección de detalles del libro */
 .book-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 600px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .book-details h2 {
-    font-size: 1.8rem;
-    color: #623C6B;
-  }
-  
-  .book-details p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  .book-details button {
-    margin-top: 1rem;
-    padding: 0.7rem;
-    background-color: #623C6B;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .book-details button:hover {
-    background-color: #532c58;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  background-color: var(--light-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book-details h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.book-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Botón de acción */
+.book-details button {
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-details button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px); /* Añade un efecto sutil de elevación al hacer hover */
+}

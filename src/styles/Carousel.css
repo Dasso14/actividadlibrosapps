@@ -1,35 +1,74 @@
+:root {
+  --primary-color: #E77C3B; /* Naranja cálido */
+  --secondary-color: #C2593A; /* Marrón rojizo */
+  --accent-color: #8B3A3A; /* Rojizo oscuro */
+  --light-color: #FFF3E4; /* Fondo cálido */
+  --text-color: #5D3A3A; /* Marrón oscuro para textos */
+  --button-hover: #BA4A3E; /* Efecto hover */
+}
+
+/* Contenedor principal del carrusel */
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-  
-  .carousel-items {
-    display: flex;
-    gap: 1rem;
-    overflow: hidden;
-    width: 80%;
-  }
-  
-  .carousel-item {
-    flex: 0 0 20%;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .carousel-button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #623C6B;
-  }
-  
-  .carousel-button:hover {
-    color: #532c58;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--light-color);
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Items del carrusel */
+.carousel-items {
+  display: flex;
+  gap: 1.5rem;
+  overflow: hidden;
+  width: 85%;
+}
+
+.carousel-item {
+  flex: 0 0 20%;
+  background-color: #fff;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item h3 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.carousel-item p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* Botones del carrusel */
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.carousel-button:hover {
+  color: var(--button-hover);
+}
+
+/* src/styles/Carousel.css */
+h2 {
+  text-align: center;
+  color: #623C6B;
+  margin-bottom: 1rem;
+}

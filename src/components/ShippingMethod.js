@@ -13,7 +13,7 @@ const ShippingMethod = () => {
   const total = subtotal + tax;
 
   const handleContinue = () => {
-    navigate('/payment-method'); // Redirige a la pantalla de método de pago
+    navigate('/payment-method'); 
   };
 
   return (
