@@ -4,11 +4,11 @@ import { BookContext } from '../contexts/BookContext';
 import '../styles/FeaturedBooks.css';
 
 const FeaturedBooks = ({ toggleCart }) => {
-  const { books, addBookToCart, selectedCategory } = useContext(BookContext);
+  const { books, addBookToCart, selectedCategories } = useContext(BookContext);
 
   // Filtramos los libros según la categoría seleccionada
-  const filteredBooks = selectedCategory
-    ? books.filter(book => book.category === selectedCategory)
+  const filteredBooks = selectedCategories.length > 0
+    ? books.filter(book => selectedCategories.includes(book.category))
     : books;
 
   return (

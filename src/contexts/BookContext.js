@@ -1,11 +1,10 @@
-// src/contexts/BookContext.js
 import React, { createContext, useState } from 'react';
 
 export const BookContext = createContext();
 
 const BookProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(''); // Estado para la categoría seleccionada
+  const [selectedCategories, setSelectedCategories] = useState([]); // Corregimos el nombre de selectedCategories
 
   const initialBooks = [
     { id: 1, title: 'El Principito', price: 20, description: 'Un clásico de la literatura.', category: "Infantil" },
@@ -34,6 +33,14 @@ const BookProvider = ({ children }) => {
     }
   };
 
+  const toggleCategory = (category) => {
+    setSelectedCategories(prevCategories => 
+      prevCategories.includes(category)
+        ? prevCategories.filter(c => c !== category)
+        : [...prevCategories, category]
+    );
+  };
+
   return (
     <BookContext.Provider
       value={{
@@ -41,14 +48,13 @@ const BookProvider = ({ children }) => {
         cart,
         addBookToCart,
         removeBookFromCart,
-        selectedCategory,
-        setSelectedCategory
+        selectedCategories,   // Correcto: selectedCategories
+        toggleCategory
       }}
     >
       {children}
     </BookContext.Provider>
   );
 };
-
 
 export default BookProvider;

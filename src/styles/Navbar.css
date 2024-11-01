@@ -218,3 +218,47 @@
 .dropdown-item:hover {
   background-color: #f1f1f1;
 }
+/* Estilo del botón de categorías */
+.category-button {
+  background-color: var(--primary-color); /* Naranja cálido */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: var(--button-hover); /* Efecto hover */
+}
+
+/* Contenedor del menú desplegable de categorías */
+.category-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--light-color); /* Fondo cálido */
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 180px;
+}
+
+/* Estilo de etiquetas en el menú */
+.category-dropdown-content label {
+  display: block;
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--text-color); /* Texto marrón oscuro */
+  cursor: pointer;
+}
+
+/* Estilo de las casillas de verificación */
+.category-dropdown-content input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: var(--accent-color); /* Color de marca en casillas */
+}
