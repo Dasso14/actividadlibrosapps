@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
+import { BookContext } from '../contexts/BookContext';
 
-const Navbar = ({ setSearchTerm, toggleCart, isLoggedIn, logout }) => {
+const Navbar = ({ toggleCart, isLoggedIn, logout }) => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { setSearchTerm } = useContext(BookContext); 
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);

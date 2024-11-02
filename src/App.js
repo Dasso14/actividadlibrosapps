@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -18,7 +17,6 @@ import Register from './components/Register';
 function AppContent({ books, searchTerm, toggleCart, isLoggedIn, logout, setSearchTerm, isCartOpen, orders, handlePlaceOrder, login }) {
   const location = useLocation();
 
-  // Determina si la ruta actual es la página de inicio
   const isHomePage = location.pathname === '/';
 
   return (
@@ -43,17 +41,13 @@ function AppContent({ books, searchTerm, toggleCart, isLoggedIn, logout, setSear
             </>
           }
         />
-        {/* Página de detalles del pedido */}
         <Route path="/orders" element={<Orders orders={orders} />} />
-        {/* Páginas de autenticación */}
         <Route path="/login" element={<Login onLogin={login} />} />
         <Route path="/register" element={<Register />} />
-        {/* Flujo de checkout */}
         <Route path="/checkout" element={<Checkout onPlaceOrder={handlePlaceOrder} />} />
         <Route path="/shipping" element={<ShippingInfo />} />
         <Route path="/shipping-method" element={<ShippingMethod />} />
         <Route path="/payment-method" element={<PaymentMethod />} />
-        {/* Página de lista de libros */}
         <Route path="/books" element={<BookList toggleCart={toggleCart} />} />
         <Route path="/books/:id" element={<BookDetails />} />
       </Routes>
