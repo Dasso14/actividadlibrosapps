@@ -1,4 +1,3 @@
-// src/components/ShippingInfo.js
 import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import { useNavigate } from 'react-router-dom';

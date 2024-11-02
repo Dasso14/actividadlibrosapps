@@ -20,7 +20,6 @@ function AppContent({ books, searchTerm, toggleCart, isLoggedIn, logout, setSear
 
   return (
     <>
-      {/* Navbar solo se muestra si no está en /login o /register */}
       {location.pathname !== '/login' && location.pathname !== '/register' && (
         <Navbar
           setSearchTerm={setSearchTerm}

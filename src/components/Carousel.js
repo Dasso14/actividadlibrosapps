@@ -1,10 +1,9 @@
-// src/components/Carousel.js
 import React, { useState } from 'react';
 import '../styles/Carousel.css';
 
 const Carousel = ({ books }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleItemsCount = 5; // cantidad de libros visibles en el carrusel
+  const visibleItemsCount = 5; 
 
   const showNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % books.length);
@@ -16,7 +15,6 @@ const Carousel = ({ books }) => {
     );
   };
 
-  // Selección de libros para que el carrusel continúe al llegar al final
   const visibleBooks = Array.from({ length: visibleItemsCount }, (_, i) =>
     books[(currentIndex + i) % books.length]
   );

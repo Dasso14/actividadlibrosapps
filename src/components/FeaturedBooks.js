@@ -1,4 +1,3 @@
-// src/components/FeaturedBooks.js
 import React, { useContext } from 'react';
 import { BookContext } from '../contexts/BookContext';
 import '../styles/FeaturedBooks.css';

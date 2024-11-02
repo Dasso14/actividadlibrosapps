@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { BookContext } from '../contexts/BookContext';
@@ -19,12 +18,12 @@ const Navbar = ({ setSearchTerm, toggleCart, isLoggedIn, logout }) => {
 
   const toggleCategoryDropdown = () => {
     setIsCategoryDropdownOpen(!isCategoryDropdownOpen);
-    setIsUserDropdownOpen(false); // Asegurarse de que el menú de usuario esté cerrado
+    setIsUserDropdownOpen(false); 
   };
 
   const toggleUserDropdown = () => {
     setIsUserDropdownOpen(!isUserDropdownOpen);
-    setIsCategoryDropdownOpen(false); // Asegurarse de que el menú de categorías esté cerrado
+    setIsCategoryDropdownOpen(false); 
   };
 
   const handleLogout = () => {

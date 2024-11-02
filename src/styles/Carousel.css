@@ -7,7 +7,6 @@
   --button-hover: #BA4A3E; /* Efecto hover */
 }
 
-/* Contenedor principal del carrusel */
 .carousel {
   display: flex;
   align-items: center;
@@ -18,7 +17,6 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Items del carrusel */
 .carousel-items {
   display: flex;
   gap: 1.5rem;
@@ -52,7 +50,6 @@
   color: var(--text-color);
 }
 
-/* Botones del carrusel */
 .carousel-button {
   background: none;
   border: none;
@@ -66,7 +63,6 @@
   color: var(--button-hover);
 }
 
-/* src/styles/Carousel.css */
 h2 {
   text-align: center;
   color: #623C6B;

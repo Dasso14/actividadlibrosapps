@@ -1,4 +1,3 @@
-// src/components/BookDetails.js
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { BookContext } from '../contexts/BookContext';

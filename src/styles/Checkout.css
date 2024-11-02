@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #E77C3B; /* Naranja cálido */
-  --secondary-color: #C2593A; /* Marrón rojizo */
-  --accent-color: #8B3A3A; /* Rojizo oscuro */
-  --light-color: #FFF3E4; /* Fondo cálido */
-  --text-color: #5D3A3A; /* Marrón oscuro para textos */
-  --button-hover: #BA4A3E; /* Efecto hover */
+  --primary-color: #E77C3B; 
+  --secondary-color: #C2593A; 
+  --accent-color: #8B3A3A; 
+  --light-color: #FFF3E4; 
+  --text-color: #5D3A3A; 
+  --button-hover: #BA4A3E; 
 }
 
 .checkout-container {

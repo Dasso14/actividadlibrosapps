@@ -4,7 +4,7 @@ export const BookContext = createContext();
 
 const BookProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]); // Corregimos el nombre de selectedCategories
+  const [selectedCategories, setSelectedCategories] = useState([]); 
 
   const initialBooks = [
     { id: 1, title: 'El Principito', price: 20, description: 'Un clásico de la literatura.', category: "Infantil" },
@@ -48,7 +48,7 @@ const BookProvider = ({ children }) => {
         cart,
         addBookToCart,
         removeBookFromCart,
-        selectedCategories,   // Correcto: selectedCategories
+        selectedCategories,   
         toggleCategory
       }}
     >

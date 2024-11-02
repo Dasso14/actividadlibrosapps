@@ -7,7 +7,6 @@
   --button-hover: #BA4A3E; /* Efecto hover */
 }
 
-/* Estilos para la sección de detalles del libro */
 .book-details {
   display: flex;
   flex-direction: column;
@@ -32,7 +31,6 @@
   color: var(--text-color);
 }
 
-/* Botón de acción */
 .book-details button {
   margin-top: 1rem;
   padding: 0.7rem;
@@ -46,5 +44,5 @@
 
 .book-details button:hover {
   background-color: var(--button-hover);
-  transform: translateY(-2px); /* Añade un efecto sutil de elevación al hacer hover */
+  transform: translateY(-2px); 
 }
