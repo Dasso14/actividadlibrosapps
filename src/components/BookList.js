@@ -5,14 +5,10 @@ import '../styles/BookList.css';
 
 const BookList = ({ toggleCart, searchTerm }) => {
   const { books, addBookToCart, selectedCategories } = useContext(BookContext);
-
-  // Filtramos los libros basados en el término de búsqueda o en la categoría seleccionada
   const filteredBooks = books.filter((book) => {
-    // Si hay un término de búsqueda, filtramos por título y descartamos el filtro de categorías
     if (searchTerm) {
       return book.title.toLowerCase().includes(searchTerm.toLowerCase());
     }
-    // Si no hay término de búsqueda, aplicamos el filtro de categorías
     return selectedCategories.length === 0 || selectedCategories.includes(book.category);
   });
 
