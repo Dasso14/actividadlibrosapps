@@ -1,19 +1,30 @@
+// src/components/Navbar.js
 import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/Navbar.css';
 import { BookContext } from '../contexts/BookContext';
+import '../styles/Navbar.css';
 
-const Navbar = ({ toggleCart, isLoggedIn, logout }) => {
+const Navbar = ({ setSearchTerm, toggleCart, isLoggedIn, logout }) => {
+  const [searchInput, setSearchInput] = useState('');
+  const { toggleCategory, selectedCategories } = useContext(BookContext);
   const navigate = useNavigate();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const { setSearchTerm } = useContext(BookContext); 
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false);
+  const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearchTerm(searchInput);
+    navigate(searchInput.trim() === '' ? '/' : '/books');
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const toggleCategoryDropdown = () => {
+    setIsCategoryDropdownOpen(!isCategoryDropdownOpen);
+    setIsUserDropdownOpen(false); // Asegurarse de que el menú de usuario esté cerrado
+  };
+
+  const toggleUserDropdown = () => {
+    setIsUserDropdownOpen(!isUserDropdownOpen);
+    setIsCategoryDropdownOpen(false); // Asegurarse de que el menú de categorías esté cerrado
   };
 
   const handleLogout = () => {
@@ -30,15 +41,47 @@ const Navbar = ({ toggleCart, isLoggedIn, logout }) => {
       </div>
 
       <div className="navbar-center">
-        <input
-          type="text"
-          placeholder="Buscar libros..."
-          onChange={handleSearchChange}
-          className="navbar-search"
-        />
+        <form onSubmit={handleSearch}>
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Buscar libros..."
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              className="navbar-search"
+            />
+            <button type="submit" className="search-button">Buscar</button>
+          </div>
+        </form>
       </div>
 
       <div className="navbar-right">
+        <div className="category-dropdown">
+          <button onClick={toggleCategoryDropdown} className="category-button">
+            Categorías
+          </button>
+          {isCategoryDropdownOpen && (
+            <div className="dropdown-content category-dropdown-content">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCategories.includes('Infantil')}
+                  onChange={() => toggleCategory('Infantil')}
+                />
+                Infantil
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedCategories.includes('Ciencia Ficción')}
+                  onChange={() => toggleCategory('Ciencia Ficción')}
+                />
+                Ciencia Ficción
+              </label>
+            </div>
+          )}
+        </div>
+
         <button className="cart-button" onClick={toggleCart}>
           Cart
         </button>
@@ -46,12 +89,12 @@ const Navbar = ({ toggleCart, isLoggedIn, logout }) => {
           Pedidos
         </button>
 
-        {isLoggedIn && (
+        {isLoggedIn ? (
           <div className="user-menu">
-            <button className="user-icon" onClick={toggleDropdown} style={{ backgroundColor: 'white' }}>
+            <button className="user-icon" onClick={toggleUserDropdown} style={{ backgroundColor: 'white' }}>
               👤
             </button>
-            {isDropdownOpen && (
+            {isUserDropdownOpen && (
               <div className="dropdown-menu">
                 <button onClick={handleLogout} className="logout-button">
                   Cerrar sesión
@@ -59,6 +102,10 @@ const Navbar = ({ toggleCart, isLoggedIn, logout }) => {
               </div>
             )}
           </div>
+        ) : (
+          <button className="login-button" onClick={() => navigate('/login')}>
+            Iniciar sesión
+          </button>
         )}
       </div>
     </nav>
